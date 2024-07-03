@@ -4,8 +4,11 @@ from segment_anything import sam_model_registry, SamPredictor
 import os
 import numpy as np
 import cv2
+import rawpy
 import matplotlib.pyplot as plt
 from PIL import Image
+import imageio
+from pathlib import Path
 
 sam_checkpoint = os.path.join("models", "sam_vit_h_4b8939.pth")
 model_type = "vit_h"
@@ -207,3 +210,7 @@ def reset_func():
     image = cv2.imread(os.path.join("outputs", "input_tab2", f"image_0.png"))
     image = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
     return gr.Image(value=image)
+
+def upload_file(image):
+    image = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
+    cv2.imwrite(os.path.join("outputs", "input_tab2", "image_0.png"), image)

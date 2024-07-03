@@ -32,7 +32,8 @@ def Tab2():
                 with gr.Column():
                     apply_button = gr.Button("Apply")
             with gr.Row():
-                remove_image = gr.Image() 
+                remove_image = gr.Image()
+            input_image.upload(upload_file, input_image)
             input_image.select(segment_func, inputs=[input_image, method], outputs=[predict_image])
             apply_button.click(apply_func, inputs=[input_image], outputs=[remove_image])
             undo_button.click(undo_func, inputs=[input_image], outputs=[predict_image])

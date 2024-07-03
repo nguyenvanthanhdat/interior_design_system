@@ -15,4 +15,5 @@ kornia==0.5.0
 webdataset
 easydict
 pytorch_lightning==1.8.4
+numpy==1.26
 git+https://github.com/facebookresearch/segment-anything.git

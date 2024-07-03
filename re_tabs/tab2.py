@@ -10,7 +10,8 @@ def Tab2():
                 with gr.Column():
                     gr.Markdown("Choose way to segment")
                 with gr.Column():
-                    method = gr.Dropdown(value="add_point",choices=["add_point", "remove_point"])
+                    # method = gr.Dropdown(value="add_point",choices=["add_point", "remove_point"])
+                    method = gr.Dropdown(value="add_point",choices=["add_point"])
 
             with gr.Row():
                 with gr.Column():

@@ -10,8 +10,8 @@ def Tab2():
                 with gr.Column():
                     gr.Markdown("Choose way to segment")
                 with gr.Column():
-                    # method = gr.Dropdown(value="add_point",choices=["add_point", "remove_point"])
-                    method = gr.Dropdown(value="add_point",choices=["add_point"])
+                    method = gr.Dropdown(value="add_point",choices=["add_point", "remove_point"])
+                    # method = gr.Dropdown(value="add_point",choices=["add_point"])
 
             with gr.Row():
                 with gr.Column():
@@ -40,7 +40,7 @@ def Tab2():
             undo_button.click(undo_func, inputs=[input_image], outputs=[predict_image])
             reset_button.click(reset_func, outputs=[predict_image])
         
-        with gr.Tab("Box"):
-            pass
+        #with gr.Tab("Box"):
+            #pass
         remove_tab.select(init_tab2, outputs=[input_image])
     return remove_tab
